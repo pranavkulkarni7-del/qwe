@@ -1,21 +1,14 @@
-# Input two numbers
-num1 = float(input("Enter first number: "))
-num2 = float(input("Enter second number: "))
+import sys
 
-# Arithmetic operations
-addition = num1 + num2
-subtraction = num1 - num2
-multiplication = num1 * num2
+# Check if exactly 2 arguments are provided
+if len(sys.argv) != 3:
+    print("Usage: python app.py <num1> <num2>")
+    sys.exit(1)
 
-# Handle division safely
-if num2 != 0:
-    division = num1 / num2
-else:
-    division = "Undefined (division by zero)"
+# Read command-line arguments
+num1 = int(sys.argv[1])
+num2 = int(sys.argv[2])
 
-# Display results
-print("\nResults:")
-print("Addition:", addition)
-print("Subtraction:", subtraction)
-print("Multiplication:", multiplication)
-print("Division:", division)
+# Perform operations
+print("Addition:", num1 + num2)
+print("Multiplication:", num1 * num2)
